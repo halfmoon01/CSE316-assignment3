@@ -68,7 +68,18 @@ async function updateImageURL() {
     }
 }
 
+
+
 const port = process.env.PORT || 5001;
 app.listen(port, async () => {
     await updateImageURL();
+});
+
+app.get('/api/facilities', async (req, res) => {
+    try {
+        const [rows] = await db.promise().query('SELECT * FROM facilities');
+        res.json(rows);
+    } catch (error) {
+        res.status(500).json({ error: 'Failed getting facilities' });
+    }
 });
