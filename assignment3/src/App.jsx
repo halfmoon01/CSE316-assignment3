@@ -8,6 +8,7 @@ import Navbar from './components/Navbar';
 import './App.css';
 import Home from './pages/Home';
 import FacilityList from './pages/FacilityList';
+import MyInfo from './pages/MyInfo';
 
 function App() {
   const [facilities, setFacilities] = useState([]);
@@ -32,7 +33,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/home" replace />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/facility-list" element={<FacilityList facilities={facilities} />} /> 
+          <Route path="/facility-list" element={<FacilityList facilities={facilities} />} />
+          <Route path="/my-info" element={<MyInfo />} />
         </Routes>
       </div>
     </Router>
