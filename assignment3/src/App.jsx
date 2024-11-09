@@ -9,6 +9,8 @@ import './App.css';
 import Home from './pages/Home';
 import FacilityList from './pages/FacilityList';
 import MyInfo from './pages/MyInfo';
+import FacilityReservation from './pages/FacilityReservation';
+
 
 function App() {
   const [facilities, setFacilities] = useState([]);
@@ -35,6 +37,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/facility-list" element={<FacilityList facilities={facilities} />} />
           <Route path="/my-info" element={<MyInfo />} />
+          <Route path="/facility-reservation" element={<FacilityReservation facilities={facilities} />} />
         </Routes>
       </div>
     </Router>
